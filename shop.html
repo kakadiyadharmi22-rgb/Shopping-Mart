@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | Shopping Mart</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="index.html">🛍️ Shopping <span>Mart</span><small>Shop More · Live Better</small></a>
+  <nav>
+    <a href="index.html">Home</a><a class="active" href="shop.html">Shop</a>
+    <a href="about.html">About</a><a href="contact.html">Contact</a>
+  </nav>
+  <button class="cart-button" onclick="showCart()">🛒 Cart <b id="cartCount">0</b></button>
+</header>
+
+<section class="page-banner">
+  <p class="eyebrow">FIND YOUR FAVOURITES</p>
+  <h1>Explore Our Collection</h1>
+  <p>Great finds. Beautiful choices. Everyday value.</p>
+</section>
+
+<main class="section">
+  <div class="shop-tools">
+    <input id="searchInput" type="search" placeholder="🔍 Search products..." oninput="renderShop()">
+    <select id="categoryFilter" onchange="renderShop()">
+      <option value="All">All Categories</option>
+      <option>Electronics</option><option>Fashion</option>
+      <option>Grocery</option><option>Beauty</option>
+    </select>
+    <select id="sortFilter" onchange="renderShop()">
+      <option value="default">Sort: Recommended</option>
+      <option value="low">Price: Low to High</option>
+      <option value="high">Price: High to Low</option>
+    </select>
+  </div>
+  <div class="filter-buttons">
+    <button class="filter active" onclick="chooseCategory('All',this)">All</button>
+    <button class="filter" onclick="chooseCategory('Grocery',this)">Grocery</button>
+    <button class="filter" onclick="chooseCategory('Fashion',this)">Fashion</button>
+    <button class="filter" onclick="chooseCategory('Electronics',this)">Electronics</button>
+    <button class="filter" onclick="chooseCategory('Beauty',this)">Beauty</button>
+  </div>
+  <div id="productGrid" class="products"></div>
+  <div id="pagination" class="pagination"></div>
+  <p id="resultCount" class="result-count"></p>
+</main>
+
+<footer class="footer">
+  <div><h2>🛍️ Shopping Mart</h2><p>Shop More · Live Better</p></div>
+  <div><h3>Quick Links</h3><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+  <div><h3>Contact Us</h3><p>support@shoppingmart.com</p><p>Surat, Gujarat, India</p></div>
+  <p class="copyright">© 2026 Shopping Mart. All rights reserved.</p>
+</footer>
+
+<div id="cartModal" class="modal" onclick="if(event.target===this)hideCart()">
+  <div class="modal-box">
+    <button class="close" onclick="hideCart()">✕</button>
+    <h2>Your Shopping Cart</h2><div id="cartItems"></div>
+    <h3 id="cartTotal">Total: ₹0</h3>
+    <button class="btn full" onclick="checkout()">Proceed to Checkout</button>
+  </div>
+</div>
+</body>
+</html>

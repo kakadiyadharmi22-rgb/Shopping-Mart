@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Shopping Mart</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="index.html">🛍️ Shopping <span>Mart</span><small>Shop More · Live Better</small></a>
+  <nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a class="active" href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  <button class="cart-button" onclick="showCart()">🛒 Cart <b id="cartCount">0</b></button>
+</header>
+
+<section class="page-banner">
+  <p class="eyebrow">OUR STORY</p>
+  <h1>Shopping should feel special.</h1>
+  <p>Welcome to a simpler, happier way to discover your favourites.</p>
+</section>
+
+<main class="section about-layout">
+  <div class="about-art"><span>🛍️</span><h2>Shop More.<br><span>Live Better.</span></h2></div>
+  <div class="about-copy">
+    <p class="eyebrow">WHO WE ARE</p>
+    <h2>Your everyday shopping destination</h2>
+    <p>Shopping Mart is a concept online store created to bring everyday essentials and exciting finds together in one convenient place.</p>
+    <p>From electronics and fashion to grocery and beauty, our goal is to make exploring products simple, enjoyable and convenient.</p>
+    <a class="btn" href="shop.html">Explore the Store →</a>
+  </div>
+</main>
+
+<section class="section">
+  <div class="section-title"><p class="eyebrow">THE SHOPPING MART DIFFERENCE</p><h2>What We Value</h2></div>
+  <div class="categories">
+    <article class="category"><span>💜</span><h3>Customer First</h3><p>We aim to make every visit easy and enjoyable.</p></article>
+    <article class="category"><span>✨</span><h3>Curated Finds</h3><p>A variety of everyday product categories.</p></article>
+    <article class="category"><span>🛒</span><h3>Easy Shopping</h3><p>Simple browsing, search and cart features.</p></article>
+    <article class="category"><span>📱</span><h3>Made for Everyone</h3><p>A responsive layout for different screens.</p></article>
+  </div>
+</section>
+
+<footer class="footer">
+  <div><h2>🛍️ Shopping Mart</h2><p>Shop More · Live Better</p></div>
+  <div><h3>Quick Links</h3><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="contact.html">Contact</a></div>
+  <div><h3>Contact Us</h3><p>support@shoppingmart.com</p><p>Surat, Gujarat, India</p></div>
+  <p class="copyright">© 2026 Shopping Mart. All rights reserved.</p>
+</footer>
+
+<div id="cartModal" class="modal" onclick="if(event.target===this)hideCart()">
+  <div class="modal-box"><button class="close" onclick="hideCart()">✕</button><h2>Your Shopping Cart</h2><div id="cartItems"></div><h3 id="cartTotal">Total: ₹0</h3><button class="btn full" onclick="checkout()">Proceed to Checkout</button></div>
+</div>
+</body>
+</html>
